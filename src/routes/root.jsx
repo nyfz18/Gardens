@@ -41,7 +41,7 @@ export default function Root() {
     return (
       <>
         <div id="sidebar">
-          <h1>React Router Contacts</h1>
+          <h1>Gardens</h1>
           <div>
             <Form id="search-form" role="search">
               <input
@@ -87,12 +87,12 @@ export default function Root() {
                           : ""
                       }
                     >
-                      {contact.first || contact.last ? (
+                      {contact?.twitter ? (
                         <>
-                          {contact.first} {contact.last}
+                          {contact?.twitter}
                         </>
                       ) : (
-                        <i>No Name</i>
+                        <i>No Label</i>
                       )}{" "}
                       {contact.favorite && <span>★</span>}
                     </NavLink>
@@ -101,7 +101,7 @@ export default function Root() {
               </ul>
             ) : (
               <p>
-                <i>No contacts</i>
+                <i>No bouquets...</i>
               </p>
             )}
           </nav>
