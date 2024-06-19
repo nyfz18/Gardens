@@ -34,8 +34,8 @@ export default function Contact() {
           key={contact.avatar}
           src={
             contact.avatar ||
-            `https://robohash.org/${contact.id}.png?size=200x200`
-          }
+            `/images/bouquet.png`
+          }          
         />
       </div>
 

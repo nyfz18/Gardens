@@ -1,6 +1,6 @@
 export default function Index() {
     return (
-      <p>
+      <p id="zero-state">
         <i>Design a bouquet!</i>
       </p>
     );
