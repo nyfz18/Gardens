@@ -372,13 +372,19 @@ i {
   color: #121212;
 }
 
-#zero-state:before {
-  display: block;
-  margin-bottom: 0.5rem;
-  content: url('/images/sun.png');
-  width: 20px;     
-  height: 20px;    
-  opacity: 0.1; 
+#zero-state button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #2663a5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+#zero-state button:hover {
+  background-color: #0056b3;
 }
 
 #error-page {
