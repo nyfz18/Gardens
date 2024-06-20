@@ -44,7 +44,7 @@ export default function Root() {
           id="sidebar-toggle"
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         >
-          {isSidebarOpen ? "<<" : ">>"}
+          {isSidebarOpen ? "≡" : "≡"}
         </button>
         <h1>Gardens</h1>
         <div>
@@ -66,10 +66,9 @@ export default function Root() {
             />
             <div id="search-spinner" aria-hidden hidden={!searching} />
             <div className="sr-only" aria-live="polite"></div>
-          </Form>
-          <Form method="post">
             <button type="submit">New</button>
           </Form>
+
         </div>
         <nav>
           {contacts.length ? (
@@ -112,5 +111,5 @@ export default function Root() {
         <Outlet />
       </div>
     </>
-  );
+  );  
 }

@@ -104,39 +104,44 @@ form[action$="destroy"] button {
 
 #sidebar {
   width: 22rem; /* Width when expanded */
-  min-width: 3rem; /* Minimum width when closed */
   background-color: #f7f7f7;
   border-right: solid 1px #e3e3e3;
   display: flex;
   flex-direction: column;
   height: 100vh;
-  overflow-y: auto;
+  overflow-y: hidden; /* Ensure overflow is hidden */
   position: fixed;
   transition: width 0.3s ease; /* Smooth transition for width change */
 }
 
 #sidebar.closed {
-  width: 3rem; /* Width when completely closed */
+  width: 3rem; /* Set to the width of the toggle button */
+  overflow: hidden; /* Hide overflow */
 }
 
 #sidebar #sidebar-toggle {
   position: absolute;
-  top: 1rem;
-  left: 1rem;
+  top: 1.25rem; /* Adjust as needed */
+  left: 0.5rem; /* Adjust left position */
   background: none;
   border: none;
   cursor: pointer;
   font-size: 1.5rem;
+  width: 2rem; /* Set width of the button */
+  height: 2rem; /* Set height of the button */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 1; /* Ensure the button is above other elements */
+  padding: 0; /* Remove padding */
 }
 
 #sidebar.closed #sidebar-toggle {
-  left: 0.5rem; /* Adjust position when collapsed */
+  left: 0.5rem; /* Keep the toggle button in view when collapsed */
 }
-
 #sidebar > * {
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 2.5rem;
+  padding-right: 0rem;
 }
 
 #sidebar.closed > *:not(#sidebar-toggle) {
@@ -192,6 +197,23 @@ form[action$="destroy"] button {
 
 #sidebar > div form input[type="search"].loading {
   background-image: none;
+}
+
+#search-form {
+  display: flex;
+  justify-content: space-between; /* Distribute items evenly */
+  align-items: center; /* Center items vertically */
+  margin-bottom: 1rem; /* Adjust margin as needed */
+  padding: 0 1rem; /* Adjust padding as needed */
+}
+
+#search-form input {
+  flex: 1; /* Take up remaining space in the flex container */
+  margin-right: 0.5rem; /* Adjust margin between input and button */
+}
+
+#search-form button {
+  margin-left: 0.5rem; /* Adjust margin between input and button */
 }
 
 #search-spinner {
@@ -278,8 +300,8 @@ i {
 }
 
 #detail.full-width {
-  margin-left: 3rem; /* Adjust the margin when sidebar is closed */
-  width: calc(100% - 3rem); /* Adjust the width when sidebar is closed */
+  margin-left: 3rem; /* No margin when sidebar is closed */
+  width: calc(100% - 3rem); /* Full width when sidebar is closed */
 }
 
 #detail.loading {
@@ -467,8 +489,9 @@ i {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   text-align: center;
-  display: flex; /* Ensure consistent height with flexbox */
+  display: flex;
   flex-direction: column; /* Ensure content alignment */
+  height: 100%; /* Ensure consistent height */
 }
 
 .product-image {
@@ -493,4 +516,16 @@ i {
 
 .product-info p {
   margin: 0;
+}
+
+.product-list .product-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-list .product-card .product-info {
+  flex: 1; /* Make sure the info section grows to fill available space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space between content */
 }
