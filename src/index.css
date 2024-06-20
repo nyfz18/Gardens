@@ -108,14 +108,38 @@ form[action$="destroy"] button {
   border-right: solid 1px #e3e3e3;
   display: flex;
   flex-direction: column;
-  height: 100vh; /* Full height of the viewport */
-  overflow-y: auto; /* Enable vertical scrolling */
-  position: fixed; /* Fix the position so it scrolls with the page */
+  height: 100vh;
+  overflow-y: auto;
+  position: fixed;
+  transition: width 0.3s ease; /* Smooth transition for width change */
+}
+
+#sidebar.closed {
+  width: 3rem; /* Width when collapsed */
+}
+
+#sidebar #sidebar-toggle {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  z-index: 1; /* Ensure the button is above other elements */
+}
+
+#sidebar.closed #sidebar-toggle {
+  left: 0.5rem; /* Adjust position when collapsed */
 }
 
 #sidebar > * {
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+#sidebar.closed > *:not(#sidebar-toggle) {
+  display: none; /* Hide all children except the toggle button */
 }
 
 #sidebar h1 {
@@ -245,7 +269,6 @@ i {
 #sidebar nav a.pending {
   color: hsl(224, 98%, 58%);
 }
-
 
 #detail {
   flex: 1;

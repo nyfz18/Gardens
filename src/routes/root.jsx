@@ -8,7 +8,7 @@ import {
   useSubmit,
 } from "react-router-dom";
 import { getContacts, createContact } from "../contacts";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 
 export async function loader({ request }) {
@@ -27,6 +27,7 @@ export default function Root() {
     const { contacts, q } = useLoaderData();
     const navigation = useNavigation();
     const submit = useSubmit();
+    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
     const searching =
     navigation.location &&
@@ -40,7 +41,13 @@ export default function Root() {
 
     return (
       <>
-        <div id="sidebar">
+        <div id="sidebar" className={isSidebarOpen ? "open" : "closed"}>
+          <button 
+            id="sidebar-toggle"
+            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          >
+            {isSidebarOpen ? "<<" : ">>"}
+          </button>
           <h1>Gardens</h1>
           <div>
             <Form id="search-form" role="search">
@@ -59,15 +66,8 @@ export default function Root() {
                   });
                 }}
               />
-              <div
-                id="search-spinner"
-                aria-hidden
-                hidden={!searching}
-                />
-              <div
-                className="sr-only"
-                aria-live="polite"
-              ></div>
+              <div id="search-spinner" aria-hidden hidden={!searching} />
+              <div className="sr-only" aria-live="polite"></div>
             </Form>
             <Form method="post">
               <button type="submit">New</button>
@@ -78,19 +78,14 @@ export default function Root() {
               <ul>
                 {contacts.map((contact) => (
                   <li key={contact.id}>
-                    <NavLink to={`contacts/${contact.id}`}
+                    <NavLink
+                      to={`contacts/${contact.id}`}
                       className={({ isActive, isPending }) =>
-                        isActive
-                          ? "active"
-                          : isPending
-                          ? "pending"
-                          : ""
+                        isActive ? "active" : isPending ? "pending" : ""
                       }
                     >
                       {contact?.twitter ? (
-                        <>
-                          {contact?.twitter}
-                        </>
+                        <>{contact?.twitter}</>
                       ) : (
                         <i>No Label</i>
                       )}{" "}
@@ -106,10 +101,9 @@ export default function Root() {
             )}
           </nav>
         </div>
-        <div id="detail"
-          className={
-            navigation.state === "loading" ? "loading" : ""
-          }
+        <div
+          id="detail"
+          className={navigation.state === "loading" ? "loading" : ""}
         >
           <Outlet />
         </div>
