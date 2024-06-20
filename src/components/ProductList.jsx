@@ -25,26 +25,22 @@ const products = [
   {
     image: '/images/valerian.jpg',
     name: 'Valerian',
+    species: 'Valeriana officinalis', 
   },
   {
-    image: '/images/sunflower.jpg',
-    name: 'Sunflower',
+    image: '/images/evergreencandy.jpg',
+    name: 'Evergreen Candytuft',
+    species: 'Iberis sempervirens',
   },
   {
-    image: '/images/sunflower.jpg',
-    name: 'Sunflower',
+    image: '/images/cornflower.jpeg',
+    name: 'Cornflower',
+    species: 'Centaurea cyanus',
   },
   {
-    image: '/images/sunflower.jpg',
-    name: 'Sunflower',
-  },
-  {
-    image: '/images/sunflower.jpg',
-    name: 'Sunflower',
-  },
-  {
-    image: '/images/sunflower.jpg',
-    name: 'Sunflower',
+    image: '/images/aconite.jpg',
+    name: 'Aconite',
+    species: 'Aconitum napellus', 
   },
 ];
 
