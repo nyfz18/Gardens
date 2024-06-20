@@ -104,6 +104,7 @@ form[action$="destroy"] button {
 
 #sidebar {
   width: 22rem;
+  min-width: 3rem; /* Minimum width when closed */
   background-color: #f7f7f7;
   border-right: solid 1px #e3e3e3;
   display: flex;
@@ -271,10 +272,14 @@ i {
 }
 
 #detail {
-  flex: 1;
-  padding: 2rem 4rem;
-  margin-left: 22rem; /* Add margin to accommodate the fixed sidebar */
-  width: calc(100% - 22rem); /* Adjust width to fit within the remaining space */
+  transition: margin-left 0.3s ease, width 0.3s ease; /* Smooth transition for width and margin changes */
+  margin-left: 22rem; /* Initial margin to accommodate sidebar width */
+  width: calc(100% - 22rem); /* Initial width to fit remaining space */
+}
+
+#detail.full-width {
+  margin-left: 3rem; /* Adjust the margin when sidebar is closed */
+  width: calc(100% - 3rem); /* Adjust the width when sidebar is closed */
 }
 
 #detail.loading {

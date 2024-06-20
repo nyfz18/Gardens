@@ -5,22 +5,26 @@ const products = [
   {
     image: '/images/californiapoppy.png',
     name: 'California Poppy',
+    species: 'Eschscholzia californica', 
   },
   {
     image: '/images/sunflower.jpg',
     name: 'Sunflower',
+    species: 'Helianthus annuus', 
   },
   {
-    image: '/images/sunflower.jpg',
-    name: 'Sunflower',
+    image: '/images/hollyhock.jpg',
+    name: 'Hollyhock',
+    species: 'Alcea rosea', 
   },
   {
-    image: '/images/sunflower.jpg',
-    name: 'Sunflower',
+    image: '/images/nasturtium.jpg',
+    name: 'Garden Nasturtium',
+    species: 'Tropaeolum majus', 
   },
   {
-    image: '/images/sunflower.jpg',
-    name: 'Sunflower',
+    image: '/images/valerian.jpg',
+    name: 'Valerian',
   },
   {
     image: '/images/sunflower.jpg',
