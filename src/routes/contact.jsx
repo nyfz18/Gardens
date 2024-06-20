@@ -54,7 +54,6 @@ export default function Contact() {
           )}
           <Favorite contact={contact} />
         </h1>
-
         {contact.first || contact.last ? (
             <>
               <i>To: </i> {contact.first}
