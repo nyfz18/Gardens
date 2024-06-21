@@ -56,22 +56,21 @@ const products = [
 ];
 
 const ProductList = () => {
-    return (
-      <div className="product-list">
-        {products.map((product) => (
-          <div key={product.id} className="product-container">
-            <ProductCard {...product} />
-            <NavLink
-              to={`/products/${product.id}`}
-              className="product-link"
-              activeClassName="active"
-            >
-              Learn more...
-            </NavLink>
-          </div>
-        ))}
-      </div>
-    );
-  };
+  return (
+    <div className="product-list">
+      {products.map((product) => (
+        <div key={product.id} className="product-container">
+          <ProductCard {...product} />
+          <NavLink
+            to={`/products/${product.id}`}
+            className="product-link"
+          >
+            Learn more...
+          </NavLink>
+        </div>
+      ))}
+    </div>
+  );
+};
 
 export default ProductList;
