@@ -528,3 +528,30 @@ i {
   flex-direction: column;
   justify-content: space-between; /* Space between content */
 }
+
+.product-details-container {
+  display: flex;
+  max-width: 800px; /* Example max-width for the container */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px; /* Add padding for buffer from the page edge */
+}
+
+.product-details-text-container {
+  flex: 1; /* Allow text to grow and overflow as needed */
+  order: 1; /* Change order to 1 to move this container to the first position */
+}
+
+.product-details-image-container {
+  flex: 0 0 300px; /* Fixed width for the image */
+  margin-left: 20px; /* Space between image and text */
+  order: 2; /* Change order to 2 to move this container to the second position */
+}
+
+.product-details-image {
+  width: 100%;
+  height: auto;
+}
+
+.product-details-text-container h1 {
+  margin-top: 0; /* Remove default margin for h1 */
+}

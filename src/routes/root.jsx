@@ -46,7 +46,7 @@ export default function Root() {
         >
           {isSidebarOpen ? "≡" : "≡"}
         </button>
-        <h1>Gardens</h1>
+        <h1>My Garden</h1>
         <div>
           <Form id="search-form" role="search">
             <input
@@ -66,37 +66,11 @@ export default function Root() {
             />
             <div id="search-spinner" aria-hidden hidden={!searching} />
             <div className="sr-only" aria-live="polite"></div>
-            <button type="submit">New</button>
+            <button type="submit">Favorites</button>
           </Form>
 
         </div>
-        <nav>
-          {contacts.length ? (
-            <ul>
-              {contacts.map((contact) => (
-                <li key={contact.id}>
-                  <NavLink
-                    to={`contacts/${contact.id}`}
-                    className={({ isActive, isPending }) =>
-                      isActive ? "active" : isPending ? "pending" : ""
-                    }
-                  >
-                    {contact?.twitter ? (
-                      <>{contact?.twitter}</>
-                    ) : (
-                      <i>No Label</i>
-                    )}{" "}
-                    {contact.favorite && <span>★</span>}
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p>
-              <i>No bouquets...</i>
-            </p>
-          )}
-        </nav>
+        
       </div>
       <div
         id="detail"

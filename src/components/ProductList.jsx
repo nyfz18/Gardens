@@ -1,5 +1,3 @@
-// ProductList.js
-
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import ProductCard from './ProductCard';
@@ -61,10 +59,7 @@ const ProductList = () => {
       {products.map((product) => (
         <div key={product.id} className="product-container">
           <ProductCard {...product} />
-          <NavLink
-            to={`/products/${product.id}`}
-            className="product-link"
-          >
+          <NavLink to={`/products/${product.id}`} className="product-link">
             Learn more...
           </NavLink>
         </div>

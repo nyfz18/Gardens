@@ -1,7 +1,7 @@
 import React from 'react';
-import ProductList from '../components/ProductList';
+import ProductList from '../components/ProductList'; // Adjust import path if necessary
 
-export default function Index() {
+const Index = () => {
   return (
     <div id="zero-state">
       <h1>Flowers</h1>
@@ -14,4 +14,6 @@ export default function Index() {
       </button>
     </div>
   );
-}
+};
+
+export default Index;
