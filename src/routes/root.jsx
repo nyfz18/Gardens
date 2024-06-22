@@ -46,7 +46,7 @@ export default function Root() {
         >
           {isSidebarOpen ? "≡" : "≡"}
         </button>
-        <h1>My Garden</h1>
+        <h1>My Gardens</h1>
         <div>
           <Form id="search-form" role="search">
             <input

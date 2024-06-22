@@ -165,7 +165,7 @@ form[action$="destroy"] button {
   width: 50px;
   height: 36px;
   margin-right: 0.5rem;
-  background: url("public/images/sun.png") no-repeat center center;
+  background: url("/images/sun.png") no-repeat center center;
   background-size: contain;
   position: relative;
   top: 1px;
