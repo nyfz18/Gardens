@@ -71,3 +71,4 @@ async function fakeNetwork(key) {
     setTimeout(res, Math.random() * 800);
   });
 }
+
